@@ -306,27 +306,164 @@ body {
     color: var(--accent);
 }
 
-/* Projects Placeholder */
-.projects-placeholder {
-    text-align: center;
-    padding: 4rem;
+/* Projects Section - Enhanced */
+.projects-section {
+    background: var(--bg-dark);
+}
+
+.project-card {
     background: var(--card-bg);
     border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 2.5rem;
 }
 
-.placeholder-icon i {
-    font-size: 4rem;
+.project-card:last-child {
+    margin-bottom: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
+    border-color: var(--accent);
+}
+
+.project-badge {
+    background: rgba(0, 212, 255, 0.15);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
     color: var(--accent);
+    letter-spacing: 1px;
+}
+
+.project-badge i {
+    margin-right: 0.5rem;
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+.project-screenshot {
+    flex: 1;
+    min-width: 280px;
+}
+
+.screenshot-3d {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    background: linear-gradient(135deg, #1a1a2e, #0a0a14);
+}
+
+.screenshot-3d:hover {
+    transform: scale(1.02);
+}
+
+.screenshot-3d img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.project-title {
+    font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: var(--accent);
 }
 
-.projects-placeholder h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.projects-placeholder p {
+.project-description {
     color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-features span {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.project-features span i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-btn {
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.live-btn {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.live-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.code-btn {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.code-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.project-status {
+    background: rgba(0, 212, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.project-status i {
+    color: var(--accent);
+    margin-right: 0.5rem;
 }
 
 /* Certificates Grid */
@@ -343,6 +480,7 @@ body {
     border: 1px solid rgba(0, 212, 255, 0.2);
     transition: 0.3s;
     backdrop-filter: blur(10px);
+    border-radius: 12px;
 }
 
 .cert-card:hover {
@@ -379,6 +517,7 @@ body {
     padding: 2rem;
     border: 1px solid rgba(0, 212, 255, 0.2);
     backdrop-filter: blur(10px);
+    border-radius: 12px;
 }
 
 .hobbies-card h3, .skills-card h3 {
@@ -416,6 +555,7 @@ body {
     border: 1px solid rgba(0, 212, 255, 0.3);
     font-size: 0.85rem;
     transition: 0.3s;
+    border-radius: 20px;
 }
 
 .skills-grid span:hover {
@@ -434,6 +574,7 @@ body {
     background: var(--card-bg);
     padding: 2rem;
     border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 12px;
 }
 
 .contact-info h3, .contact-form h3 {
@@ -464,6 +605,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     transition: 0.3s;
+    border-radius: 8px;
 }
 
 .social-link:hover {
@@ -484,6 +626,7 @@ body {
     color: var(--text-light);
     font-family: 'Space Grotesk', monospace;
     transition: 0.3s;
+    border-radius: 8px;
 }
 
 .input-group input:focus, .input-group textarea:focus {
@@ -502,6 +645,7 @@ body {
     cursor: pointer;
     font-family: 'Space Grotesk', monospace;
     transition: 0.3s;
+    border-radius: 8px;
 }
 
 .submit-btn:hover {
@@ -570,5 +714,11 @@ footer {
     .photo-glow {
         width: 200px;
         height: 200px;
+    }
+    .project-content {
+        flex-direction: column;
+    }
+    .project-title {
+        font-size: 1.4rem;
     }
 }

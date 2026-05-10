@@ -159,11 +159,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 // CV Download
 document.getElementById('download-cv').addEventListener('click', (e) => {
     e.preventDefault();
-    alert('📄 CV download simulation. Replace with actual CV file.');
-    const link = document.createElement('a');
-    link.href = '#';
-    link.download = 'Biruktawit_Zemedkun_CV.pdf';
-    link.click();
+    alert('📄 CV download will be available soon.');
 });
 
 // Contact form (using FormSubmit)
@@ -220,5 +216,5 @@ document.getElementById('telegram-link').addEventListener('click', (e) => {
 });
 document.getElementById('github-link').addEventListener('click', (e) => {
     e.preventDefault();
-    window.open('https://github.com/biruktawit', '_blank');
+    window.open('https://github.com/itsbrukti', '_blank');
 });
