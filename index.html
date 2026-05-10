@@ -45,7 +45,7 @@
             </div>
             <div class="hero-photo">
                 <div class="photo-glow">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Biruktawit Zemedkun">
+                    <img src="profile.jpg" alt="Biruktawit Zemedkun">
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     <p>When I'm not coding, I'm exploring new technologies, contributing to open source, or working on personal projects that push my boundaries. I believe in continuous learning and the power of technology to make a difference.</p>
                     <div class="about-stats">
                         <div><span>2+</span> Years Coding</div>
-                        <div><span>30+</span> Projects Completed</div>
+                        <div><span>10+</span> Projects Completed</div>
                         <div><span>Full Stack</span> Specialist</div>
                     </div>
                 </div>
@@ -84,12 +84,13 @@
                 </div>
                 <div class="project-content">
                     <div class="project-screenshot">
-                        <div class="screenshot-3d">
-                            <img src="ethiogo-screenshot.png" alt="EthioGo Bus Management System Screenshot" onerror="this.src='https://placehold.co/600x400/1a1a2e/00d4ff?text=EthioGo+Screenshot'">
+                        <div class="screenshot-3d" onclick="openFullscreen(this.querySelector('img'))">
+                            <img src="ethiogo-screenshot.png" alt="EthioGo Bus Management System Screenshot" onerror="this.src='https://placehold.co/800x500/1a1a2e/00d4ff?text=EthioGo+Screenshot+%F0%9F%93%B8'">
+                            <div class="zoom-hint"><i class="fas fa-search-plus"></i> Click to enlarge</div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">🚍 EthioGo - Bus Management System</h3>
+                        <h3 class="project-title">EthioGo - Bus Management System</h3>
                         <p class="project-description">
                             A bus management system for managing passengers, routes, and admin tasks. Built with a database-driven backend and user login system.
                         </p>
@@ -121,12 +122,13 @@
                 </div>
                 <div class="project-content">
                     <div class="project-screenshot">
-                        <div class="screenshot-3d">
-                            <img src="blackpink-screenshot.png" alt="BLACKPINK Fan Site Screenshot" onerror="this.src='https://placehold.co/600x400/1a1a2e/ff69b4?text=BLACKPINK+Fan+Site'">
+                        <div class="screenshot-3d" onclick="openFullscreen(this.querySelector('img'))">
+                            <img src="blackpink-screenshot.png" alt="BLACKPINK Fan Site Screenshot" onerror="this.src='https://placehold.co/800x500/1a1a2e/ff69b4?text=BLACKPINK+Fan+Site+%F0%9F%92%96'">
+                            <div class="zoom-hint"><i class="fas fa-search-plus"></i> Click to enlarge</div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3 class="project-title">🖤💖 BLACKPINK Fan Site</h3>
+                        <h3 class="project-title">BLACKPINK Fan Site</h3>
                         <p class="project-description">
                             This website is a simple fan information hub dedicated to BLACKPINK, where users can learn about the group, its members, and their music in one place. It includes details about their albums, solo songs, collaborations, and a gallery of photos. The site also provides background information about YG Entertainment and is designed for easy, open access without login or signup.
                         </p>
@@ -159,24 +161,13 @@
             <h2 class="section-title">// CERTIFICATES</h2>
             <div class="certificates-grid">
                 <div class="cert-card">
-                    <div class="cert-icon"><i class="fas fa-code"></i></div>
-                    <h3>Full Stack Web Development</h3>
-                    <p>Meta - Coursera | 2024</p>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon"><i class="fab fa-js"></i></div>
-                    <h3>JavaScript Algorithms & Data Structures</h3>
-                    <p>freeCodeCamp | 2023</p>
-                </div>
-                <div class="cert-card">
-                    <div class="cert-icon"><i class="fab fa-react"></i></div>
-                    <h3>React - The Complete Guide</h3>
-                    <p>Udemy | 2024</p>
-                </div>
-                <div class="cert-card">
                     <div class="cert-icon"><i class="fab fa-python"></i></div>
-                    <h3>Python for Everybody</h3>
-                    <p>University of Michigan | 2024</p>
+                    <h3>Introduction to Python</h3>
+                    <p>SoloLearn | 2024</p>
+                    <div class="cert-image-wrapper" onclick="openFullscreen(this.querySelector('img'))">
+                        <img src="python-certificate.png" alt="Python Certificate from SoloLearn" onerror="this.src='https://placehold.co/600x400/1a1a2e/00d4ff?text=Python+Certificate'">
+                        <div class="zoom-hint"><i class="fas fa-search-plus"></i> Click to view full certificate</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -187,28 +178,24 @@
             <h2 class="section-title">// HOBBIES & SKILLS</h2>
             <div class="hobbies-wrapper">
                 <div class="hobbies-card">
-                    <h3><i class="fas fa-heart"></i> Hobbies</h3>
+                    <h3><i class="fas fa-heart"></i> My Hobbies</h3>
                     <ul>
-                        <li><i class="fas fa-chess"></i> Chess & Strategy Games</li>
-                        <li><i class="fas fa-book"></i> Tech Reading</li>
-                        <li><i class="fas fa-headphones"></i> Lo-Fi & Coding Music</li>
-                        <li><i class="fas fa-hiking"></i> Hiking & Nature</li>
-                        <li><i class="fas fa-gamepad"></i> Indie Games</li>
+                        <li><i class="fas fa-futbol"></i> Watching & Playing Football</li>
+                        <li><i class="fas fa-film"></i> Watching Movies</li>
+                        <li><i class="fas fa-book"></i> Reading Fictions</li>
+                        <li><i class="fas fa-headphones"></i> Listening to Music</li>
+                        <li><i class="fas fa-laptop-code"></i> Coding</li>
                     </ul>
                 </div>
                 <div class="skills-card">
                     <h3><i class="fas fa-laptop-code"></i> Tech Stack</h3>
                     <div class="skills-grid">
-                        <span>JavaScript/TypeScript</span>
-                        <span>React / Next.js</span>
-                        <span>Node.js / Express</span>
-                        <span>Python / Django</span>
-                        <span>Java / Spring Boot</span>
-                        <span>MongoDB / PostgreSQL</span>
-                        <span>Tailwind / SCSS</span>
-                        <span>Git & GitHub</span>
-                        <span>Docker Basics</span>
-                        <span>Three.js</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>MySQL</span>
                     </div>
                 </div>
             </div>
@@ -223,10 +210,18 @@
                     <h3>Let's Connect</h3>
                     <p>Feel free to reach out for collaborations, opportunities, or just a tech chat!</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" id="email-link"><i class="fas fa-envelope"></i> Email</a>
-                        <a href="#" class="social-link" id="linkedin-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                        <a href="#" class="social-link" id="telegram-link"><i class="fab fa-telegram-plane"></i> Telegram</a>
-                        <a href="#" class="social-link" id="github-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="mailto:zemedkunbiruktawit@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i> zemedkunbiruktawit@gmail.com
+                        </a>
+                        <a href="https://github.com/itsbrukti" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://t.me/Lablink1" target="_blank" class="social-link">
+                            <i class="fab fa-telegram-plane"></i> Telegram
+                        </a>
+                        <a href="https://www.linkedin.com/in/your-name" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -248,6 +243,12 @@
             </div>
         </div>
     </section>
+
+    <!-- Fullscreen Modal -->
+    <div id="fullscreen-modal" class="fullscreen-modal" onclick="closeFullscreen()">
+        <span class="close-modal">&times;</span>
+        <img id="fullscreen-image" class="modal-content" alt="Fullscreen view">
+    </div>
 
     <footer>
         <p>© 2025 Biruktawit Zemedkun | Full Stack Developer in the making</p>

@@ -101,6 +101,28 @@ for (let i = 0; i < 30; i++) {
     orbGroup.push(orb);
 }
 
+// Fullscreen functionality
+window.openFullscreen = function(element) {
+    const modal = document.getElementById('fullscreen-modal');
+    const modalImg = document.getElementById('fullscreen-image');
+    modal.style.display = 'block';
+    modalImg.src = element.src;
+    document.body.style.overflow = 'hidden';
+}
+
+window.closeFullscreen = function() {
+    const modal = document.getElementById('fullscreen-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeFullscreen();
+    }
+});
+
 // Animation loop
 let time = 0;
 function animate() {
@@ -162,59 +184,63 @@ document.getElementById('download-cv').addEventListener('click', (e) => {
     alert('📄 CV download will be available soon.');
 });
 
-// Contact form (using FormSubmit)
+// Contact form - WORKING with FormSubmit
 const form = document.getElementById('message-form');
 const statusDiv = document.getElementById('form-status');
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     
+    if (!name || !email || !message) {
+        statusDiv.innerHTML = '⚠️ Please fill in all fields.';
+        statusDiv.style.color = '#ff6b6b';
+        return;
+    }
+    
     statusDiv.innerHTML = '⏳ Sending message...';
     statusDiv.style.color = '#00d4ff';
     
-    // Replace with your actual email for production
-    const YOUR_EMAIL = 'biruktawit@example.com';
+    const YOUR_EMAIL = 'zemedkunbiruktawit@gmail.com';
+    
     try {
         const response = await fetch('https://formsubmit.co/ajax/' + YOUR_EMAIL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
             body: JSON.stringify({
                 name: name,
                 email: email,
                 message: message,
-                _subject: 'New Portfolio Message from Biruktawit'
+                _subject: 'New Message from Biruktawit\'s Portfolio',
+                _template: 'table'
             })
         });
+        
         if (response.ok) {
-            statusDiv.innerHTML = '✓ Message sent successfully! I\'ll get back to you soon.';
+            statusDiv.innerHTML = '✓ Message sent successfully! I will get back to you soon. 💌';
+            statusDiv.style.color = '#00ff9d';
             form.reset();
         } else {
-            statusDiv.innerHTML = '⚠️ Failed to send. Please try again or email directly.';
+            statusDiv.innerHTML = '⚠️ Failed to send. Please email me directly at zemedkunbiruktawit@gmail.com';
+            statusDiv.style.color = '#ff6b6b';
         }
     } catch (err) {
-        statusDiv.innerHTML = '⚠️ Network error. Please try again.';
+        console.error('Error:', err);
+        statusDiv.innerHTML = '⚠️ Network error. Please email me directly at zemedkunbiruktawit@gmail.com';
+        statusDiv.style.color = '#ff6b6b';
     }
+    
     setTimeout(() => {
-        setTimeout(() => { if(statusDiv) statusDiv.innerHTML = ''; }, 3000);
-    }, 4000);
-});
-
-// Social links (update with actual URLs)
-document.getElementById('email-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.location.href = 'mailto:biruktawit@example.com';
-});
-document.getElementById('linkedin-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open('https://linkedin.com/in/biruktawit-zemedkun', '_blank');
-});
-document.getElementById('telegram-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open('https://t.me/biruktawit', '_blank');
-});
-document.getElementById('github-link').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open('https://github.com/itsbrukti', '_blank');
+        if (statusDiv.innerHTML !== '') {
+            setTimeout(() => {
+                statusDiv.innerHTML = '';
+            }, 3000);
+        }
+    }, 5000);
 });

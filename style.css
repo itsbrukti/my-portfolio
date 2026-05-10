@@ -306,7 +306,7 @@ body {
     color: var(--accent);
 }
 
-/* Projects Section - Enhanced */
+/* Projects Section - Larger Screenshots */
 .projects-section {
     background: var(--bg-dark);
 }
@@ -354,8 +354,8 @@ body {
 }
 
 .project-screenshot {
-    flex: 1;
-    min-width: 280px;
+    flex: 1.2;
+    min-width: 350px;
 }
 
 .screenshot-3d {
@@ -364,6 +364,8 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
     background: linear-gradient(135deg, #1a1a2e, #0a0a14);
+    cursor: pointer;
+    position: relative;
 }
 
 .screenshot-3d:hover {
@@ -375,6 +377,24 @@ body {
     height: auto;
     display: block;
     border-radius: 16px;
+}
+
+.zoom-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.screenshot-3d:hover .zoom-hint {
+    opacity: 1;
 }
 
 .project-info {
@@ -466,11 +486,12 @@ body {
     margin-right: 0.5rem;
 }
 
-/* Certificates Grid */
+/* Certificates Section */
 .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .cert-card {
@@ -481,6 +502,8 @@ body {
     transition: 0.3s;
     backdrop-filter: blur(10px);
     border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .cert-card:hover {
@@ -503,6 +526,88 @@ body {
 .cert-card p {
     color: var(--text-dim);
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.cert-image-wrapper {
+    margin-top: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0a0a14;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.cert-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.cert-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cert-image-wrapper .zoom-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cert-image-wrapper:hover .zoom-hint {
+    opacity: 1;
+}
+
+/* Fullscreen Modal */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+}
+
+.fullscreen-modal .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.fullscreen-modal .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--accent);
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.fullscreen-modal .close-modal:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--accent);
 }
 
 /* Hobbies & Skills */
@@ -606,6 +711,7 @@ body {
     gap: 0.5rem;
     transition: 0.3s;
     border-radius: 8px;
+    word-break: break-all;
 }
 
 .social-link:hover {
@@ -720,5 +826,12 @@ footer {
     }
     .project-title {
         font-size: 1.4rem;
+    }
+    .project-screenshot {
+        min-width: 280px;
+    }
+    .social-link {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
     }
 }
